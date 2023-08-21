@@ -1,18 +1,21 @@
 #include "main.h"
+
 int _printf(const char *format, ...) {
     va_list args;
-    va_start(args, format);
     int charCount = 0;
+    va_start(args, format);
     while (*format != '\0') {
         if (*format == '%') {
             format++;
             switch (*format) {
-                case 'c':
-                    putchar(va_arg(args, int));
+                case 'c': {
+                    int ch = va_arg(args, int);
+                    putchar(ch);
                     charCount++;
                     break;
+                }
                 case 's': {
-                    char str = va_arg(args, char);
+                    char *str = va_arg(args, char*);
                     while (*str != '\0') {
                         putchar(*str);
                         str++;
