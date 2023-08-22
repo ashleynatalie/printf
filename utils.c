@@ -32,9 +32,9 @@ int append_hexa_code(char ascii_code, char buffer[], int j)
 	buffer[j++] = 'x';
 
 	buffer[j++] = map_to[ascii_code / 16];
-	buffer[j = map_to[ascii_code % 16];
+	buffer[j = map_to[ascii_code % 16]
 
-	return (3);
+	return (3)
 }
 
 /**
